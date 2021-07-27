@@ -1,0 +1,146 @@
+:root{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 5vh auto auto auto 5vh;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas: ". . ."
+    ". sedan ."
+    ". suv ."
+    ". luxury ."
+    ". . .";
+}
+
+.card_sizing{
+    justify-self: center;
+    box-sizing: border-box;
+    padding: 4rem 4rem 4rem 3rem;
+    max-width: 40rem;
+    min-width: 27rem;
+}
+
+.sedan_card{
+    grid-area: sedan;
+    background: hsl(31, 77%, 52%);
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.suv_card{
+    grid-area: suv;
+    background: hsl(184, 100%, 22%);
+}
+
+.luxury_card{
+    grid-area: luxury;
+    background: hsl(179, 100%, 13%);
+    border-radius:0 0 1.5rem 1.5rem;
+}
+
+.header_style{
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 4rem;
+    color: hsl(0, 0%, 95%);
+    text-transform: uppercase;
+}
+
+.pg_style{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 1rem;
+    color:  hsla(0, 0%, 100%, 0.75);
+    line-height: 2rem;
+    padding: 2rem 0 2rem 0;
+
+}
+
+.img_container{
+    padding: 0 0 2rem 0;
+}
+
+.button_style{
+    text-decoration: none;
+    box-sizing: border-box;
+    border: 1px transparent;
+    border-radius: 5rem;
+    padding: 1rem 2rem 1rem 2rem;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 1rem;
+    transition: color 1s;
+    transition: border 1s;
+    transition: background 1s;
+}
+
+.button_style:hover{
+    box-sizing: border-box;
+    background: transparent;
+    border: 1px solid hsl(0, 0%, 95%);
+    color:hsl(0, 0%, 95%);
+    transition: color 1s;
+    transition: border 1s;
+    transition: background 1s;
+    
+}
+
+.sedan{
+    color:hsl(31, 77%, 52%);
+}
+
+.suv{
+    color:hsl(184, 100%, 22%);
+}
+
+.luxury{
+    color:hsl(179, 100%, 13%);
+}
+
+@media screen and (min-width: 900px){
+    body{
+        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-columns: 2fr repeat(3, min-content) 2fr;
+        grid-template-areas: ". . . . ."
+    ". sedan suv luxury ."
+    ". . . . .";
+    justify-content: center;
+    }
+
+    .sedan_card{
+        border-radius: 1.5rem 0 0 1.5rem;
+    }
+    
+    .luxury_card{
+        border-radius: 0 1.5rem 1.5rem 0;
+    }
+
+    .img_container{
+        padding: 0 0 3rem 0;
+    }
+
+    .header_style{
+        font-size: clamp(4rem, 4vw, 5rem);
+    }
+    .pg_style{
+        font-size: clamp(1.5rem,1.25vw,2rem);
+        line-height: 2;
+        padding: 3rem 0 3rem 0;
+    }
+
+    .card_sizing{
+        justify-self: center;
+        box-sizing: border-box;
+        padding: 4rem 6rem 4rem 5rem;
+        width: clamp(27rem, 30vw, 45rem);
+    }
+
+    .button_style{
+        font-size: clamp(1rem, 1.25vw, 1.75rem);
+        padding: 1.5rem 3rem 1.5rem 3rem;
+    }
+
+    
+
+
+    
+}
